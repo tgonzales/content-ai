@@ -1,13 +1,11 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
+import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google"
 
 import { siteConfig } from "@/config/site"
-
+import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils"
-
-import { JetBrains_Mono as FontMono, Inter as FontSans } from "next/font/google"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -53,7 +51,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative flex flex-col min-h-screen">
-              <SiteHeader />
               <div className="flex-1">{children}</div>
             </div>
           </ThemeProvider>
